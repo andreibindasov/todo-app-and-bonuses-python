@@ -1,0 +1,38 @@
+##### STRINGS ####
+>>>dir(str)
+
+str.capitalize()
+str.title()
+str.strip()
+
+'hey' * 10
+
+#### END STRINGS ####
+
+##### MATCH CASE ####
+match user_action:
+    case 'add':
+        ....
+    case 'show' | 'display':
+        ....
+    case _:
+        break
+#### END MATCH CASE ####
+ ### LIST ###
+ list.__setitem__(idx, val)
+ list.__getitem__(idx)
+
+ list.pop() --> removing -1 element
+
+ list.sort()
+ ### END LIST ###
+
+ ### IGNORE SPECIAL CHARACTERS WHEN WORKING WITH PATH ###
+ file = open(r"C:\Users\Downloads\filename.txt")
+ ########
+
+ ##### BREAK THE PROGRAM AND EXIT WITH MESSAGE
+ exit("Not valid input")
+ ######
+
+
