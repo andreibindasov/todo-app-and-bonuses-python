@@ -5,7 +5,7 @@ def get_todos(filepath="todos.txt"):
 
 
 # non-default parameters come before default ones !!!
-def update_todos(filepath, todos_args):
+def update_todos(todos_args, filepath="todos.txt"):
     with open(filepath, 'w') as f:
         f.writelines(todos_args)
 
