@@ -11,8 +11,15 @@ list_box = psg.Listbox(values=mf.get_todos(),
                        size=[45, 12])
 edit_btn = psg.Button("Edit")
 
+# btn_labels = ["Close", "Submit"]
+# layout = []
+# for bl in btn_labels:
+#     layout.append(psg.Button(bl))
+
+layout = [[label], [input_box, add_btn], [list_box, edit_btn]]
+
 window = psg.Window("To-Do App",
-                    layout=[[label], [input_box, add_btn], [list_box, edit_btn]],
+                    layout=layout,
                     font=('Helvetica', 15))
 while True:
     event, values = window.read()
@@ -43,6 +50,6 @@ while True:
                 window['todo'].update(value=values['todos'][0].strip("\n"))
         case psg.WINDOW_CLOSED:
             break
-
+            # exit() - stop the program completely
 
 window.close()
