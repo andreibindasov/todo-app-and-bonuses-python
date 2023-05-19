@@ -8,6 +8,9 @@ label_clock = psg.Text('', key='clock')
 label = psg.Text("Enter a to-do")
 input_box = psg.InputText(tooltip="Enter todo", key="todo")
 add_btn = psg.Button("Add", button_color=("white", "grey"), size=12)
+# add_btn = psg.Button(size=6, image_source="add.png",
+#                      mouseover_colors="LightBlue2",
+#                      tooltip="Add a new todo", key="Add")
 
 list_box = psg.Listbox(values=mf.get_todos(),
                        key="todos",
