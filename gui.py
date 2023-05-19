@@ -11,12 +11,18 @@ list_box = psg.Listbox(values=mf.get_todos(),
                        size=[45, 12])
 edit_btn = psg.Button("Edit")
 
+complete_btn = psg.Button("Complete", button_color="green")
+
+exit_btn = psg.Button("Exit", button_color="black")
 # btn_labels = ["Close", "Submit"]
 # layout = []
 # for bl in btn_labels:
 #     layout.append(psg.Button(bl))
 
-layout = [[label], [input_box, add_btn], [list_box, edit_btn]]
+layout = [[label],
+          [input_box, add_btn],
+          [list_box, edit_btn, complete_btn],
+          [exit_btn]]
 
 window = psg.Window("To-Do App",
                     layout=layout,
@@ -45,6 +51,16 @@ while True:
                 mf.update_todos(todos)
                 window['todos'].update(values=todos)
                 window['todo'].update(value="")
+        case "Complete":
+            if len(values['todos']) > 0:
+                todo_to_complete = values['todos'][0]
+                todos = mf.get_todos()
+                todos.remove(todo_to_complete)
+                mf.update_todos(todos)
+                window['todos'].update(values=todos)
+                window['todo'].update(value='')
+        case "Exit":
+            break
         case "todos":
             if len(values['todos']) > 0:
                 window['todo'].update(value=values['todos'][0].strip("\n"))
