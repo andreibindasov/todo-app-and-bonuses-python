@@ -35,4 +35,9 @@ match user_action:
  exit("Not valid input")
  ######
 
-
+CREATE STANDALONE EXECUTABLE
+switch to (venv) in terminal >set-executionpolicy remotesigned -scope currentuser
+OR
+                             >venv\Scripts\Activate.ps1 OR >venv\Scripts\activate.bat
+install pyinstaller package
+>pyinstaller --onefile --windowed --clean [file name]
